@@ -66,7 +66,13 @@ class App extends Component {
       this.refs.left.style.width = 0;
       this.refs.left.style["min-width"] = 0;
       this.refs.header.style.left = 0;
+      this.refs.left.style.opacity = 0;
+      setTimeout(() => {
+        this.refs.left.style.display = "none";
+      }, 200);
     } else {
+      this.refs.left.style.display = "block";
+      this.refs.left.style.opacity = 1;
       this.refs.left.style.width = "200px";
       this.refs.left.style["min-width"] = "200px";
       this.refs.header.style.left = "200px";
@@ -105,7 +111,7 @@ class App extends Component {
       <div className="App">
         <div className="layout">
           <div className="left" ref="left">
-            <div>
+            <div ref="list">
               <span className="back"> 返回我的教室</span>
               <h3 className="title">限量预售： 增长黑客教程</h3>
               <ul>
