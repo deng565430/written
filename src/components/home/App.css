@@ -1,0 +1,131 @@
+
+:root{
+  --heading-color: #33394b;
+  --font-size: 15px;
+  --list-font-size: 13px;
+  --back-font-size: 12px;
+}
+
+li {
+  list-style-type:none;
+}
+
+*, h1,h2,h3,h4, p, ul, li, span, div{
+  margin: 0;
+  padding: 0;
+}
+i {
+   font-style:normal
+}
+
+.layout {
+  display: flex;
+}
+.left {
+  width: 250px;
+  min-width: 250px;
+  transition: all .3s;
+  background: var(--heading-color);
+  box-sizing: border-box;
+}
+
+.back {
+  color: #3c77b8;
+  padding: 10px 0 0 10px;
+  font-size: var(--back-font-size);
+}
+.title {
+  font-size: var(--font-size);
+  border-bottom: 1px solid #2c3142;
+  line-height: 30px;
+  color: #d0d0d0;
+  padding-left: 10px;
+}
+.left-item {
+  border-bottom: 1px solid #2c3142;
+}
+.left-item .item-top {
+  padding-left: 10px;
+  display: flex;
+  line-height: 30px;
+  color: #889aa7;
+  font-size: var(--list-font-size);
+}
+.left-item .item-top >i {
+  width: 30px;
+}
+.left-item .item-top >p {
+  flex: 1;
+  text-align: left;
+}
+.left-item .item-center {
+  padding-left: 10px;
+  display: flex;
+  color: #a4aab1;
+  font-size: var(--back-font-size)
+}
+
+.left-item .item-center >i {
+  width: 30px
+}
+.left-item .item-center > p {
+  flex: 1;
+  text-align: left;
+  line-height: 20px;
+}
+
+.right {
+  flex: 1;
+  min-width: 800px;
+  transition: all .3s;
+}
+.header {
+  border-left: 1px solid #2c3142;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 250px;
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  background: var(--heading-color);
+  font-size: var(--font-size);
+  transition: all .3s;
+}
+.header span {
+  color: #4fa5c8;
+  width: 50px;
+  margin-left: 10px;
+}
+
+.header p {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  color: #dae0e1
+}
+.content{
+  margin-top: 40px;
+  text-align: center;
+  font-size: var(--font-size);
+  background: #f3f7fa;
+  padding: 0 30px 10px 30px;
+}
+.container {
+  background: #fff;
+
+}
+.buttom {
+  display: flex;
+  padding: 20px 20px 0;
+}
+.buttom .btn {
+  width: 100px;
+  border: 1px solid#87cae5;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 30px;
+}
+.buttom span{
+  flex: 1
+}
