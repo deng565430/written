@@ -94,7 +94,7 @@ i {
 }
 .header span {
   color: #4fa5c8;
-  width: 50px;
+  width: 100px;
   margin-left: 10px;
 }
 
@@ -113,8 +113,28 @@ i {
 }
 .container {
   background: #fff;
-
 }
+.content-right {
+  width: 300px;
+  position: fixed;
+  right: -305px;
+  top: 0;
+  background: #fff;
+  text-align: left;
+  box-shadow: -1px 1px 10px #888878;;
+  transition: all .3s
+}
+.content-right h4 {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #eee;
+  padding-left: 10px;
+}
+.content-right ul li {
+   padding-left: 10px;
+  border-bottom: 1px solid #eee;
+}
+
 .buttom {
   display: flex;
   padding: 20px 20px 0;

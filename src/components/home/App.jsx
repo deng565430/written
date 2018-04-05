@@ -13,7 +13,7 @@ class App extends Component {
           leftIcon: "xx",
           rightIcon: "xx",
           style: {
-            transition: 'all .3s',
+            transition: "all .3s",
             opacity: 1
           },
           isHide: false,
@@ -37,7 +37,7 @@ class App extends Component {
           leftIcon: "xx",
           rightIcon: "xx",
           style: {
-            transition: 'all .3s',
+            transition: "all .3s",
             opacity: 1
           },
           isHide: false,
@@ -59,6 +59,8 @@ class App extends Component {
       ]
     };
     this.hidehandle = this.hidehandle.bind(this);
+    this.showMyWork = this.showMyWork.bind(this);
+    this.hideMyWork = this.hideMyWork.bind(this);
   }
   hidehandle() {
     // 实现右侧点击展开和收起
@@ -88,22 +90,30 @@ class App extends Component {
     const { leftData } = this.state;
     if (leftData[index].isHide) {
       leftData[index].style = {
-        height: '100%',
+        height: "100%",
         opacity: 1,
-        transition: 'all .3s'
-      }
+        transition: "all .3s"
+      };
     } else {
       leftData[index].style = {
         height: 0,
         opacity: 0,
-        overflow: 'hidden',
-        transition: 'all .3s'
-      }
+        overflow: "hidden",
+        transition: "all .3s"
+      };
     }
-    leftData[index].isHide = !leftData[index].isHide
+    leftData[index].isHide = !leftData[index].isHide;
     this.setState({
       leftData: leftData
-    })
+    });
+  }
+  showMyWork () {
+    // 实现右侧展开我的作业
+    this.refs.myWork.style.right = '0'
+  }
+  hideMyWork () {
+    // 收起我的作业
+    this.refs.myWork.style.right = '-305px'
   }
 
   render() {
@@ -115,8 +125,9 @@ class App extends Component {
               <span className="back"> 返回我的教室</span>
               <h3 className="title">限量预售： 增长黑客教程</h3>
               <ul>
-                {this.state.leftData.map((item,index) => {
-                  return <li className="left-item" key={item.title}>
+                {this.state.leftData.map((item, index) => {
+                  return (
+                    <li className="left-item" key={item.title}>
                       <div className="item-top">
                         <i>{item.leftIcon}</i>
                         <p>{item.title}</p>
@@ -126,13 +137,16 @@ class App extends Component {
                       </div>
                       <ul style={item.style}>
                         {item.clildData.map(child => {
-                          return <li className="item-center" key={child.title}>
+                          return (
+                            <li className="item-center" key={child.title}>
                               <i>{child.icon}</i>
                               <p>{child.title}</p>
-                            </li>;
+                            </li>
+                          );
                         })}
                       </ul>
-                    </li>;
+                    </li>
+                  );
                 })}
               </ul>
             </div>
@@ -141,6 +155,9 @@ class App extends Component {
             <div className="header" ref="header">
               <span onClick={this.hidehandle}> {this.state.flag} </span>
               <p>本页导读(第1页/共1页)</p>
+              <span onClick={this.showMyWork}>
+                <i>xx</i> 我的作业
+              </span>
             </div>
             <div className="content">
               <div className="container">
@@ -161,6 +178,20 @@ class App extends Component {
                 <p>这是内容</p>
                 <p>这是内容</p>
                 <p>这是内容</p>
+              </div>
+              <div className="content-right" ref="myWork">
+                <h4>
+                  <span onClick={this.hideMyWork}>{'< 收起'}  </span>
+                  <i>  xx</i> 我的作业(2/6)
+                </h4>
+                <ul>
+                  <li>第二章：xxxxxx</li>
+                  <li>第二章：xxxxxx</li>
+                  <li>第二章：xxxxxx</li>
+                  <li>第二章：xxxxxx</li>
+                  <li>第二章：xxxxxx</li>
+                  <li>第二章：xxxxxx</li>
+                </ul>
               </div>
               <div className="buttom">
                 <button className="btn">上一节</button>
